@@ -13,7 +13,12 @@ import './style.css'
 //     "strYoutube":"https:\/\/www.youtube.com\/watch?v=1IszT_guI08",
 //     "strIngredient1":"penne rigate","strIngredient2":"olive oil","strIngredient3":"garlic","strIngredient4":"chopped tomatoes","strIngredient5":"red chile flakes","strIngredient6":"italian seasoning","strIngredient7":"basil","strIngredient8":"Parmigiano-Reggiano","strIngredient9":"","strIngredient10":"","strIngredient11":"","strIngredient12":"","strIngredient13":"","strIngredient14":"","strIngredient15":"","strIngredient16":null,"strIngredient17":null,"strIngredient18":null,"strIngredient19":null,"strIngredient20":null,"strMeasure1":"1 pound","strMeasure2":"1\/4 cup","strMeasure3":"3 cloves","strMeasure4":"1 tin ","strMeasure5":"1\/2 teaspoon","strMeasure6":"1\/2 teaspoon","strMeasure7":"6 leaves","strMeasure8":"spinkling","strMeasure9":"","strMeasure10":"","strMeasure11":"","strMeasure12":"","strMeasure13":"","strMeasure14":"","strMeasure15":"","strMeasure16":null,"strMeasure17":null,"strMeasure18":null,"strMeasure19":null,"strMeasure20":null,"strSource":null,"strImageSource":null,"strCreativeCommonsConfirmed":null,"dateModified":null}
 
-const RecipeCard = ({meal}) => {
+const RecipeCard = ({meal,setEnablePopUp,setMealPopUp}) => {
+    let tags = meal.strTags?.split(',');
+    if(tags == undefined)
+    {
+        tags = []
+    }
     return(
         <div className='recipecard'>
             <img src={meal.strMealThumb} alt="Meal Thumbnail" />
@@ -22,19 +27,23 @@ const RecipeCard = ({meal}) => {
             <p><span>Area : </span>{meal.strArea}</p>
             <div className='recipecard-tags'>
                 {
-                    meal.strTags ? () => {
-                        meal.strTags.split(',').map((tag)=>
+                    tags.length > 0 ?
+                        tags.map((tag)=>
                         (
                             <div className='recipecard-tag-cont'>
                                 <p>{tag}</p>
                             </div>
-                        ))
-                    } : (<></>)
-                        
+                        )) : (
+                            <div className='sizedBox-40h'>
+                            </div>
+                        )
                 }
             </div>
             <div className='recipecard-cook'>
-                <a href="#">Cook</a>
+                <button onClick={()=>{
+                    setEnablePopUp(true);
+                    setMealPopUp(meal);
+                }}>Cook</button>
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import RecipeCard from './RecipeCard';
 import spinner from '../ressources/loading.gif';
 import notFoundImg from '../ressources/recipeNotFound.png';
 
-const SearchSection = ({meals,searchDone}) => {
+const SearchSection = ({meals,searchDone,setEnablePopUp,setMealPopUp}) => {
     return(
         <div>
             <div className='searchsection-cont'>
@@ -15,7 +15,7 @@ const SearchSection = ({meals,searchDone}) => {
                             meals?.length > 0 ?
                             meals.map((meal) => 
                                 (
-                                    <RecipeCard meal={meal}/>
+                                    <RecipeCard meal={meal} setEnablePopUp={setEnablePopUp} setMealPopUp={setMealPopUp}/>
                                 )
                             ) : (
                                 <div className='notFound-cont'>

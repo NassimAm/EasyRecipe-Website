@@ -2,6 +2,8 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import HeroSection from './Components/HeroSection';
 import SearchSection from './Components/SearchSection';
+import RecipePopUp from './Components/RecipePopUp';
+import Footer from './Components/Footer';
 import hero0 from './ressources/hero0.jpg';
 import hero1 from './ressources/hero1.jpg';
 import hero2 from './ressources/hero2.jpg';
@@ -19,11 +21,12 @@ function App() {
   const [searchTerm,setSearchTerm] = useState("");
   const [meals,setMeals] = useState([]);
   const [searchDone,setSearchDone] = useState(true);
+  const [enablePopUp,setEnablePopUp] = useState(false);
+  const [mealPopUp,setMealPopUp] = useState(null);
 
   const searchMeals = async (term) => {
     setSearchDone(false);
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
-    // console.log((await fetch("http://www.omdbapi.com/?apikey=dd2fbe5c&s=Batman")).json())
     const data = await response.json();
     
     setMeals(data.meals);
@@ -45,8 +48,10 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
+      <RecipePopUp enabled={enablePopUp} meal={mealPopUp} setEnablePopUp={setEnablePopUp} setMealPopUp={setMealPopUp}/>
       <HeroSection image={heroImage} term={searchTerm} setSearchTerm={setSearchTerm} searchMeals={searchMeals}/>
-      <SearchSection meals={meals} searchDone={searchDone}/>
+      <SearchSection meals={meals} searchDone={searchDone} searchMeals={searchMeals} setEnablePopUp={setEnablePopUp} setMealPopUp={setMealPopUp}/>
+      <Footer/>
     </div>
   );
 }

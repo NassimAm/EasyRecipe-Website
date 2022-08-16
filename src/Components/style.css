@@ -336,7 +336,17 @@
 .recipecard-tags{
     display: flex;
     margin:0 5px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x:auto;
+}
+
+.recipecard-tags{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.recipecard-tags::-webkit-scrollbar{
+    display: none;
 }
 
 .recipecard-tag-cont{
@@ -358,7 +368,7 @@
     justify-content: center;
 }
 
-.recipecard-cook a{
+.recipecard-cook button{
     padding: 10px 40%;
     background-color: #CE9461;
     border-radius: 15px;
@@ -366,10 +376,12 @@
     font-size: 16px;
     color: white;
     text-decoration: none;
+    border:none;
 }
 
-.recipecard-cook a:hover{
+.recipecard-cook button:hover{
     background-color: #A10035;
+    cursor: pointer;
 }
 
 .searchsection-spinner-cont{
@@ -388,4 +400,108 @@
 .notFound-img{
     width:45%;
     height: auto;
+}
+
+/*Recipe PopUp ==========================================================================*/
+.recipePopUp{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #fcffe785;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.recipePopUp-inner{
+    width:450px;
+    height: 75%;
+    background-color: #E0D8B0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    overflow-y: auto;
+}
+
+.recipePopUp-inner iframe{
+    padding: 15px 0;
+    width: 90%;
+    height: 40%;
+}
+
+.recipePopUp-inner-desc{
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.recipePopUp-inner-desc p{
+    font-family: 'Overpass';
+    font-size: 16px;
+    text-align: start;
+    margin: 10px 25px;
+}
+
+.recipePopUp-inner-desc span{
+    color: #DEA057;
+    font-weight: 600;
+}
+
+.recipePopUp-back-cont{
+    display: flex;
+    justify-content: center;
+}
+
+.recipePopUp-back{
+    padding: 10px 40%;
+    background-color: #CE9461;
+    border-radius: 15px;
+    font-family: 'Overpass';
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.recipePopUp-back:hover{
+    background-color: #A10035;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px){
+    .recipePopUp-inner{
+        width:300px;
+    }
+}
+
+/*Footer =====================================================================*/
+.footer{
+    margin-top: 10px;
+    background-color: #e0d8b091;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p{
+    font-family: 'Overpass';
+    font-size: 16px;
+    color: black;
+    margin: 15px 15px;
+}
+
+.footer span{
+    color:#A10035;
+}
+
+@media only screen and (max-width: 600px){
+    .footer p{
+        font-size: 14px;
+    }
+}
+
+/*==========================================*/
+.sizedBox-40h{
+    height:40.8px
 }

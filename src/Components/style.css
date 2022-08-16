@@ -357,6 +357,15 @@
 }
 
 .spinner{
-    width: 100px;
+    width: 150px;
+    height: auto;
+}
+
+.notFound-cont{
+    padding-top: 15px;
+}
+
+.notFound-img{
+    width:45%;
     height: auto;
 }

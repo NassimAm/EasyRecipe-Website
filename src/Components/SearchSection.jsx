@@ -1,7 +1,8 @@
 import React from 'react';
 import './style.css';
 import RecipeCard from './RecipeCard';
-import spinner from '../ressources/sand-timer.gif';
+import spinner from '../ressources/loading.gif';
+import notFoundImg from '../ressources/recipeNotFound.png';
 
 const SearchSection = ({meals,searchDone}) => {
     return(
@@ -17,8 +18,8 @@ const SearchSection = ({meals,searchDone}) => {
                                     <RecipeCard meal={meal}/>
                                 )
                             ) : (
-                                <div>
-                                    <p>No Recipe Found</p>
+                                <div className='notFound-cont'>
+                                    <img className='notFound-img' src={notFoundImg} alt="Recipe Not Found" />
                                 </div>
                             )
                         : (

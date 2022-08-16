@@ -17,14 +17,17 @@ function App() {
   let heroCount = 0;
   
   const [searchTerm,setSearchTerm] = useState("");
-  const [meals,setMeals] = useState([])
+  const [meals,setMeals] = useState([]);
+  const [searchDone,setSearchDone] = useState(true);
 
   const searchMeals = async (term) => {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
+    setSearchDone(false);
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
     // console.log((await fetch("http://www.omdbapi.com/?apikey=dd2fbe5c&s=Batman")).json())
     const data = await response.json();
     
-    setMeals(data.meals)
+    setMeals(data.meals);
+    setSearchDone(true);
   }
 
   useEffect(() => {
@@ -43,7 +46,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <HeroSection image={heroImage} term={searchTerm} setSearchTerm={setSearchTerm} searchMeals={searchMeals}/>
-      <SearchSection meals={meals}/>
+      <SearchSection meals={meals} searchDone={searchDone}/>
     </div>
   );
 }

@@ -17,6 +17,9 @@
     padding: 10px 0px;
     background-color: #CE9461;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    position:fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 .navbar-logo-name{
@@ -36,7 +39,7 @@
     padding: 0 0 2px 0;
     font-family:'Overpass';
     font-size: 16;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -45,7 +48,7 @@
     position: absolute;
     bottom:0;
     left:0;
-    border-bottom: 2px black solid;
+    border-bottom: 2px white solid;
     width: 0%;
     transition: .2s;
 }
@@ -55,7 +58,7 @@
     position: absolute;
     bottom:0;
     left: 0;
-    border-bottom: 2px black solid;
+    border-bottom: 2px white solid;
     width: 100%;
     transition: .2s;
 }
@@ -90,6 +93,7 @@
     background-color: #E0D8B0;
     display: flex;
     flex-direction: row;
+    padding-top: 40px;
 }
 
 .herosection-left{
@@ -346,4 +350,13 @@
 
 .recipecard-cook a:hover{
     background-color: #A10035;
+}
+
+.searchsection-spinner-cont{
+    padding-top: 5px;
+}
+
+.spinner{
+    width: 100px;
+    height: auto;
 }

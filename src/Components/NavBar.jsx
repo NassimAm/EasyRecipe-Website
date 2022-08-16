@@ -3,11 +3,15 @@ import './style.css';
 import searchIcon from '../ressources/icons8-search-30.png'
 import userIcon from '../ressources/icons8-user-48.png'
 import menuIcon from '../ressources/icons8-menu-30.png'
+import logo from '../ressources/EasyRecipeLogo.png';
 
 const NavBar = () => {
     return(
         <div className='navbar'>
-            <div>
+            <div className='navbar-logo'>
+                <div className='navbar-logo-img-cont'>
+                    <img className='navbar-logo-img' src={logo} alt="" />
+                </div>
                 <p className='navbar-logo-name'>EasyRecipe</p>
             </div>
             <div className='navbar-buttons'>

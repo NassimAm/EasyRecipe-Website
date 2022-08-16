@@ -14,7 +14,7 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    padding: 10px 0px;
+    padding: 15px 0px;
     background-color: #CE9461;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
     position:fixed;
@@ -22,15 +22,33 @@
     width: 100%;
 }
 
+.navbar-logo{
+    display: flex;
+}
+
 .navbar-logo-name{
-    margin:0 15px;
+    margin: 5px 0 0 80px;
     padding:0;
     font-family:'Overpass';
     font-size: 20px;
 }
 
+.navbar-logo-img-cont
+{
+    position: relative;
+    margin-left:10px;
+}
+
+.navbar-logo-img
+{
+    position: absolute;
+    width:70px;
+    top:-20px;
+}
+
 .navbar-buttons{
     display: block;
+    margin-top: 5px;
 }
 
 .navbar-link{
@@ -65,12 +83,14 @@
 
 .navbar-icons-desk{
     width: 25px;
-    padding: 0 10px
+    padding: 0 10px;
+    margin-top: 5px;
 }
 
 .navbar-icons-mobile{
     width:0;
     padding: 0 10px;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 700px){

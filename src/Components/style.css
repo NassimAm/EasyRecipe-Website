@@ -1,0 +1,349 @@
+@font-face {
+    font-family: 'Segeo UI';
+    src: url('../fonts/Segoe UI.ttf');
+}
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('../fonts/Overpass-Medium.ttf');
+}
+
+
+/*NavBar ===============================================================================================*/
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    background-color: #CE9461;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.navbar-logo-name{
+    margin:0 15px;
+    padding:0;
+    font-family:'Overpass';
+    font-size: 20px;
+}
+
+.navbar-buttons{
+    display: block;
+}
+
+.navbar-link{
+    position: relative;
+    margin: 0 10px;
+    padding: 0 0 2px 0;
+    font-family:'Overpass';
+    font-size: 16;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar-link::before{
+    content: '';
+    position: absolute;
+    bottom:0;
+    left:0;
+    border-bottom: 2px black solid;
+    width: 0%;
+    transition: .2s;
+}
+
+.navbar-link:hover::before{
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    border-bottom: 2px black solid;
+    width: 100%;
+    transition: .2s;
+}
+
+.navbar-icons-desk{
+    width: 25px;
+    padding: 0 10px
+}
+
+.navbar-icons-mobile{
+    width:0;
+    padding: 0 10px;
+}
+
+@media only screen and (max-width: 700px){
+    .navbar-buttons{
+        display: none;
+    }
+
+    .navbar-icons-desk{
+        width:0;
+    }
+
+    .navbar-icons-mobile{
+        width:25px;
+    }
+}
+
+/*Hero Section ==============================================================================================*/
+.herosection{
+    position:relative;
+    background-color: #E0D8B0;
+    display: flex;
+    flex-direction: row;
+}
+
+.herosection-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    flex:2
+}
+
+.herosection-title{
+    margin:0;
+    font-family: 'Overpass';
+    font-size: 50px;
+    font-weight: 600;
+    color: #CE9461;
+}
+
+.herosection-subtitle{
+    margin: 20px 0;
+    font-family: 'Overpass';
+    font-size: 16px;
+}
+
+.herosection-buttons{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.herosection-button{
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 15px 0px;
+    border-radius: 5px;
+    background-color: #A10035;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.herosection-button input{
+    border:none;
+    font-family: 'Overpass';
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    background-color: #A10035;
+    width: 100%;
+}
+
+.herosection-button input:focus{
+    outline: none;
+}
+
+.herosection-button input::placeholder{
+    color: rgb(183, 183, 183);
+    font-family: 'Overpass';
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.herosection-button img{
+    width: 25px;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+.herosection-right{
+    flex:1
+}
+
+.herosection-image{
+    width:100%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+@media only screen and (max-width: 700px){
+    .herosection-title{
+        font-size: 20px;
+    }
+    
+    .herosection-subtitle{
+        font-size: 14px;
+    }
+
+    .herosection-button{
+        font-size: 12px;
+    }
+
+    .herosection-left{
+        flex: 1;
+    }
+
+    .herosection-image,.herosection-right{
+        width: 0;
+    }
+
+    .herosection-right{
+        flex:0;
+    }
+}
+
+/*Search Bar Responsivity ===================================*/
+@media only screen and (max-width: 750px){
+    .herosection-button input::placeholder{
+        font-size: 14px;
+    }
+    .herosection-button input{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 700px){
+    .herosection-title{
+        font-size: 30px;
+    }
+    
+    .herosection-subtitle{
+        font-size: 14px;
+    }
+
+    .herosection-button{
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1500px) {
+    .herosection-title,.herosection-subtitle{
+        width: 50%;
+    }
+
+    .herosection-button{
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    .herosection-left{
+        flex: 4;
+    }
+
+    .herosection-title,.herosection-subtitle{
+        width: 50%;
+    }
+    .herosection-button{
+        width: 50%;
+    }
+}
+
+/*Search Section ====================================================================================*/
+.searchsection-title{
+    font-family: 'Overpass';
+    font-size: 40px;
+    font-weight: 600;
+    padding: 25px 0 10px 0;
+    margin:0
+}
+
+.searchsection-cont{
+    background-color: #FCFFE7;
+}
+
+.searchsection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.recipecard{
+    width: 25%;
+    background-color: #E0D8B0;
+    padding: 15px 10px 10px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+@media only screen and (min-width: 1500px){
+    .recipecard{
+        width:20%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .recipecard{
+        width:80%;
+    }
+}
+
+.recipecard:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.recipecard img{
+    width: 90%;
+    border-radius: 5px;
+}
+
+.recipecard p{
+    font-family: 'Overpass';
+    font-size: 16px;
+    text-align: start;
+    margin: 15px 0px 15px 20px;
+}
+
+.recipecard span{
+    color: #DEA057;
+    font-weight: 600;
+}
+
+.recipecard-tags{
+    display: flex;
+    margin:0 5px;
+    flex-wrap: wrap;
+}
+
+.recipecard-tag-cont{
+    border-radius: 15px;
+    background-color: #FCFFE7;
+    text-align: center;
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.recipecard-tag-cont p{
+    margin: 0;
+    padding: 0;
+}
+
+.recipecard-cook{
+    display: flex;
+    margin: 20px 5px 10px 5px;
+    justify-content: center;
+}
+
+.recipecard-cook a{
+    padding: 10px 40%;
+    background-color: #CE9461;
+    border-radius: 15px;
+    font-family: 'Overpass';
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.recipecard-cook a:hover{
+    background-color: #A10035;
+}

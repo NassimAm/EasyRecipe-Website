@@ -288,7 +288,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .recipecard{
@@ -476,7 +476,6 @@
 
 /*Footer =====================================================================*/
 .footer{
-    margin-top: 10px;
     background-color: #e0d8b091;
 
     display: flex;
